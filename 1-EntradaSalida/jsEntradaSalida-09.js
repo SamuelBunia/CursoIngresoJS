@@ -13,7 +13,8 @@ function mostrarAumento()
 	sueldo = parseFloat(document.getElementById("txtIdSueldo").value);
 	proceso = sueldo * 0.1;
 	resultado = sueldo + proceso;
-	document.getElementById("txtIdResultado").value = resultado;
+	document.getElementById("txtIdResultado").value = resultado.toFixed(2);
+	//resultado.toFixed(2); esto es para redondear las cifras hasta dos decimales
 
 	
 }
