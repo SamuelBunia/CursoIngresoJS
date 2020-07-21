@@ -20,8 +20,7 @@ function mostrar()
 	/*puede hacerse asi
 	if (edad < 13){
 		alert("Es un niño");
-	}else{
-		if (edad > 18){
+	}else if (edad > 18){
 			alert("Es un adulto");
 		}else{
 			alert("Es adolescente");
