@@ -10,5 +10,69 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
-}
+    let cantidad;
+    let marca;
+    let precioDescuento;
+    let descuento;
+    let ingresosb;
+    let importeFinal;
+    const PRECIO = 35; //CUANDO SEA CONSTANTE NORMALMENTE HACERLO CON MAYUSCULA
+
+    cantidad = parseInt(document.getElementById("txtIdCantidad").value);
+    marca = document.getElementById("Marca").value;
+    //debo conocer el descuento
+
+    switch (cantidad) {
+        case 1:
+        case 2:
+            descuento = 0;
+            break;
+        case 3:
+            if (marca == "ArgentinaLuz") {
+                descuento = 15;//se puede colocar 0,15
+            }else if (marca == "FelipeLamparas") {
+                descuento = 10;
+            }else{
+                descuento = 5;
+            }
+            break;
+        case 4:
+            if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+                descuento = 25;
+            }else{
+                descuento = 20;
+            }
+            break;
+        case 5:
+            if (marca == "ArgentinaLuz"){
+                descuento = 40;
+            }else{
+                descuento = 30;
+            }
+            break;
+        default:
+            descuento = 50;
+    
+        }
+//ya se cual descuento cada uno
+
+        precioDescuento = PRECIO - PRECIO  * descuento / 100;
+        importeFinal = precioDescuento * cantidad;
+
+        document.getElementById("txtIdprecioDescuento").value = importeFinal;
+
+
+        if (importeFinal > 120) {
+            //importe ingreso brutos
+            ingresosb = importeFinal * 10 / 100;
+            //importe final 
+            importeFinal = importeFinal + ingresosb;
+            document.getElementById("txtIdprecioDescuento").value = importeFinal;
+            alert("Importe a pagar: $" + importeFinal +" Usted pago: $" + ingresosb + " de Ingresos Brutos");
+        }else{
+            alert("Importe a pagar: $" + importeFinal);//importe sin ingresos brutos
+        }
+    }
+
+
+
