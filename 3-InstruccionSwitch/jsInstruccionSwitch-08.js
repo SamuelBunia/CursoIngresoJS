@@ -4,6 +4,13 @@ function mostrar()
 	
 	destino = document.getElementById("txtIdDestino").value;
 	
+	/*if (destino == "Bariloche" || destino == "Ushuaia") {
+		alert ("Hace frio");
+	}else{
+		alert ("Hace calor");
+	}
+	*/
+
 	//Hay dos lugares calientes y dos frios
 	switch (destino) {
 		case "Bariloche":
