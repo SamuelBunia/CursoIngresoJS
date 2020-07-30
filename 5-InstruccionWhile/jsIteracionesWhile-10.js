@@ -12,18 +12,48 @@ hasta que el usuario quiera, mostrar:
 9-Diferencia entre positivos y negativos, (positvos-negativos). */
 function mostrar()
 {
-	//declarar contadores y variables 
-	var respuesta;
-	var numeroIngresado;
-	var sumaNegativos=0;
+//variables
+let numero;
+let sumaNegativos = 0;
+let sumaPositivos;
+let candidadPositivos;
+let cantidadNegativos;
+let cantidadCeros;
+let cantidadPares;
+let promedioPositivos;
+let promedioNegativos;
+let diferencia;
+let seguir;
 
-	respuesta="si";
+//bucle para que pida numeros hasta que el usuario quiera
+do{
+	//pido un numero
+	numero = parseInt(prompt("Ingrese un numero: "));
+	if (numero < 0) {
+		sumaNegativos = sumaNegativos + numero;
+		document.write(sumaNegativos);
+	}
 
-	while(respuesta=="si")
-	{
-		
-		respuesta=prompt("desea continuar?");
-	}//fin del while
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+	seguir = prompt("Quiere ingresar otro numero?");
+}while(seguir == 'si');
+
+
+
+
+
+
+
+//acumuladores, contadores, si es par uso el % 2
+	
+	//Escribir los resultador en document.write
+	/*document.write("la Suma de negativos es :"+sumaNegativos);
+	document.write("la Suma de positivos es :"+sumaNegativos);
+	document.write("la Cantidad de positivos es :"+sumaNegativos);
+	document.write("la Cantidad de negativos es :"+sumaNegativos);
+	document.write("la Cantidad de ceros es :"+sumaNegativos);
+	document.write("la Cantidad de números pares es :"+sumaNegativos);
+	document.write("el Promedio de positivos es :"+sumaNegativos);
+	document.write("el Promedios de negativos es :"+sumaNegativos);
+	document.write("la Diferencia entre positivos y negativos es :"+sumaNegativos);*/
 }//FIN DE LA FUNCIÓN
