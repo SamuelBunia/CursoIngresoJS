@@ -15,13 +15,13 @@ function mostrar()
 //variables
 let numero;
 let sumaNegativos = 0;
-let sumaPositivos;
-let candidadPositivos;
-let cantidadNegativos;
-let cantidadCeros;
-let cantidadPares;
-let promedioPositivos;
-let promedioNegativos;
+let sumaPositivos = 0;
+let cantidadPositivos = 0;
+let cantidadNegativos = 0;
+let cantidadCeros = 0;
+let cantidadPares = 0;
+let promedioPositivos = 0;
+let promedioNegativos = 0;
 let diferencia;
 let seguir;
 
@@ -29,17 +29,51 @@ let seguir;
 do{
 	//pido un numero
 	numero = parseInt(prompt("Ingrese un numero: "));
+
+	//me fijo el sigo del numero + - o cero y sumo y cuento
 	if (numero < 0) {
 		sumaNegativos = sumaNegativos + numero;
-		document.write(sumaNegativos);
+		cantidadNegativos++;
+		
+	}else if(numero > 0){
+		sumaPositivos = sumaPositivos + numero;
+		cantidadPositivos++;
+		
+	}else{
+		cantidadCeros++;
 	}
-
-
+	
+	//si el numero que el usuario ingreso es par, contar los pares que ingrese 
+	if(numero % 2 == 0){
+		cantidadPares++;
+	}
+	
+	
 	seguir = prompt("Quiere ingresar otro numero?");
 }while(seguir == 'si');
 
 
+//para ver si el usuario no ingreso nada en positivos o negativos
+if (cantidadNegativos != 0) {
+	promedioNegativos = sumaNegativos / cantidadNegativos;
+}
 
+if (cantidadPositivos != 0) {
+	promedioPositivos = sumaPositivos / cantidadPositivos;
+}
+
+diferencia = cantidadNegativos - cantidadPositivos;
+
+//mostrar informacion
+document.write("La suma de numeros positivos es: " + sumaPositivos + "</br>");
+document.write("La suma de numeros negativos es: " +sumaNegativos + "</br>");
+document.write("La cantidad de numeros negativos es: " + cantidadNegativos + "</br>");
+document.write("La cantidad de numeros positivos es: " + cantidadPositivos + "</br>");
+document.write("La cantidad de ceros es: " + cantidadCeros + "</br>");
+document.write("La cantidad de numeros pares es: " + cantidadPares + "</br>");
+document.write("El promedio de numeros positivos es: " + promedioPositivos + "</br>");
+document.write("El promedio de numeros negativos es: " + promedioNegativos + "</br>");
+document.write("El diferencia de numeros negativos y numeros positivos es: " + diferencia + "</br>");
 
 
 
