@@ -1,8 +1,9 @@
 function mostrar()
 {
+seguir = parseInt(prompt("Que cantidad de veces quieres repetir el Hola?: "));
 
-	var repetciones = prompt("ingrese el número de repeticiones");
-	alert("ok");
-
+for (let veces = 0; veces < seguir ; veces++) {
+	console.log("Hola UTN-FRA");
+	}
 
 }//FIN DE LA FUNCIÓN
